@@ -4,11 +4,11 @@ import Image from "next/image"
 import profilepic from "../../public/me.png"
 const LeftSidebar = () => {
     const imgStyle = "border w-[45px] h-[45px]"
-    const linkImgStyle = "w-[25px] h-[25px] border"
+    const linkImgStyle = "w-[25px] h-[25px] border border-gray-600"
     const svgDimensions = "30px"
     return (
-        <div className="w-[250px] h-screen  float-left">
-            <div className="w-[250px] h-screen border-r border-r-white flex flex-col justify-between fixed">
+        <div className="w-[250px] h-fit float-left">
+            <div className="w-[250px] min-h-screen flex flex-col justify-between fixed">
                 <div className="">
                     <Goto href="/">
                         <svg
