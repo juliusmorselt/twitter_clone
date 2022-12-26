@@ -1,3 +1,5 @@
+
+
 const Trend = () => {
     return (
         <div className="trend px-5 py-3 hover:bg-gray-800">

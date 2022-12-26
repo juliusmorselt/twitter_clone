@@ -8,7 +8,7 @@ const LeftSidebar = () => {
     const svgDimensions = "30px"
     return (
         <div className="w-[250px] h-fit float-left">
-            <div className="w-[250px] min-h-screen flex flex-col justify-between fixed">
+            <div className="w-[250px] min-h-screen flex flex-col justify-between fixed pr-5">
                 <div className="">
                     <Goto href="/">
                         <svg

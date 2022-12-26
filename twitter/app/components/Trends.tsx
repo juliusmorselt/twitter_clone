@@ -1,6 +1,7 @@
 require("dotenv").config({ path: "../../.env" })
 import Trend from "./Trend"
 import SideComponent from "./SideComponent"
+import Link from "next/link"
 import { useEffect } from "react"
 const Trends = () => {
     
@@ -11,9 +12,12 @@ const Trends = () => {
             {trendsArr.map((_) => (
                 <Trend />
             ))}
-            <p className="text-blue-500 px-5 py-2 hover:bg-gray-800">
-                Show more
-            </p>
+            <Link href='../trends/'>
+                <p className="text-blue-500 px-5 py-2 hover:bg-gray-800">
+                    Show more
+                </p>
+            </Link>
+            
         </SideComponent>
     )
 }

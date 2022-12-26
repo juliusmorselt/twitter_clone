@@ -1,6 +1,8 @@
+import { randomInt } from "crypto"
 import Image from "next/image"
 import profilepic from "../../public/me.png"
 
+const extraTweets = randomInt(42)
 const WhatsHappening = () => {
     const svgDimensions = "20"
     const svgClass = "hover:cursor-pointer"
@@ -111,10 +113,10 @@ const WhatsHappening = () => {
                 </button>
             </div>
             <div className="h-[50px] border-t border-t-gray-600 flex justify-center items-center hover:bg-slate-400 hover:cursor-pointer">
-                <p>Show 52 Tweets</p>
+                <p>Show {extraTweets} Tweets</p>
             </div>
         </div>
     )
 }
 
-export default WhatsHappening
+export {WhatsHappening, extraTweets}

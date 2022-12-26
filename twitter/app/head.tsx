@@ -1,7 +1,7 @@
 export default function Head() {
     return (
         <>
-            <title>Twitter</title>
+            <title> / Twitter</title>
             <meta property="og:site_name" content="Twitter"/>
             <meta
                 content="width=device-width, initial-scale=1"

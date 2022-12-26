@@ -1,13 +1,27 @@
 import Image from "next/image"
 import profilepic from "../../public/me.png"
-import Tweets from '../getData'
+import Tweets from "../getData"
+import Quotes from "../Quotes"
+import { randomInt } from "crypto"
 const Tweet = () => {
-    var unvar = "font-bold text-white flex items-center"
+    var unvar = "font-bold text-white flex items-center gap-1"
     var grayedout = "text-gray-500"
     var tweet = "text-white"
     var options = "text-gray-500 mt-2 flex gap-3 items-center text-center"
     var optionstext = "text-gray-500 text-sm"
     const svgDimensions = "20px"
+    var i = Math.floor(100 * Math.random())
+    var o = Math.floor(3 * Math.random())
+    const timepassed = randomInt(35)
+    const timeunit = new Array()
+    timeunit[1] = 'h'
+    timeunit[2] = 'm'
+    timeunit[3] = 's'
+    const view = randomInt(23145)
+    const reply = randomInt(5325)
+    const retweet = randomInt(15354)
+    const like = randomInt(23145)
+
     return (
         <div className="w-full flex gap-5 py-5 px-5 border-b border-b-gray-600">
             <div className="min-w-[48px] h-[48px] rounded-full relative overflow-hidden">
@@ -40,7 +54,7 @@ const Tweet = () => {
                             </span>
                         </p>
                         <p className={grayedout}>@UserTag</p>
-                        <p className={grayedout}>· 15h</p>
+                        <p className={grayedout}>· {timepassed}{timeunit[o]}</p>
                     </div>
 
                     {/* ... */}
@@ -49,13 +63,7 @@ const Tweet = () => {
 
                 {/* Tweet Itself */}
                 <div className={tweet}>
-                    <p> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Mollitia, non. Reprehenderit facilis non exercitationem
-                        harum! Iste, architecto fugiat molestiae, repellat,
-                        obcaecati debitis laborum ducimus harum atque
-                        consequuntur magnam natus laudantium?
-                    </p>
+                    {Quotes[i]}
                 </div>
 
                 {/* Options */}
@@ -70,10 +78,25 @@ const Tweet = () => {
                         >
                             <path
                                 fill="#6b7380"
+                                d="M17 1h-2a1 1 0 0 0-1 1v16.992h4V2a1 1 0 0 0-1-1zm-6 6H9a1 1 0 0 0-1 1v10.992h4V8a1 1 0 0 0-1-1zm-6 6H3a1 1 0 0 0-1 1v4.992h4V14a1 1 0 0 0-1-1z"
+                            />
+                        </svg>
+                        <p className={optionstext}>{view}</p>
+                    </div>
+                    <div className={options}>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={svgDimensions}
+                            height={svgDimensions}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="#6b7380"
                                 d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.26 6.33l-2 2a1 1 0 0 0-.21 1.09A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20Zm0 18H5.41l.93-.93a1 1 0 0 0 0-1.41A8 8 0 1 1 12 20Z"
                             />
                         </svg>
-                        <p className={optionstext}>2064</p>
+                        <p className={optionstext}>{reply}</p>
                     </div>
                     <div className={options}>
                         <svg
@@ -88,9 +111,8 @@ const Tweet = () => {
                                 d="m486 154l-30 21v-68q0-35-25-60.5T371 21H157q-35 0-60 25.5T72 107q0 9 6 15t15 6q10 0 16-6t6-15q0-18 12.5-30.5T157 64h214q17 0 29.5 12.5T413 107v66l-30-22q-19-11-29 7q-12 19 6 30l75 47l76-47q17-11 7-30q-15-15-32-4zm-51 102q-10 0-16 6t-6 15q0 18-12.5 30.5T371 320H157q-17 0-29.5-12.5T115 277v-66l30 22q2 0 6 1t6 1q8 0 17-9q12-19-6-30l-75-47l-76 47q-17 11-7 30q11 17 30 7l30-22v66q0 35 25 60.5t60 25.5h214q35 0 60-25.5t25-60.5q1-9-4.5-15t-14.5-6z"
                             />
                         </svg>
-                        <p className={optionstext}>17</p>
+                        <p className={optionstext}>{retweet}</p>
                     </div>
-                    <Tweets />
                     <div className={options}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +130,7 @@ const Tweet = () => {
                                 d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z"
                             />
                         </svg>
-                        <p className={optionstext}>4325</p>
+                        <p className={optionstext}>{like}</p>
                     </div>
                     <div className={options}>
                         <svg
