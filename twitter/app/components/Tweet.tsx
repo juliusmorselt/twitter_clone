@@ -1,6 +1,6 @@
 import Image from "next/image"
 import profilepic from "../../public/me.png"
-import Tweets from "../getData"
+//import Tweets from "../getData"
 import Quotes from "../Quotes"
 import { randomInt } from "crypto"
 const Tweet = () => {
@@ -21,7 +21,7 @@ const Tweet = () => {
     const reply = randomInt(5325)
     const retweet = randomInt(15354)
     const like = randomInt(23145)
-
+    // let what = Tweets.data['weather'][0]['main']
     return (
         <div className="w-full flex gap-5 py-5 px-5 border-b border-b-gray-600">
             <div className="min-w-[48px] h-[48px] rounded-full relative overflow-hidden">
@@ -64,8 +64,8 @@ const Tweet = () => {
                 {/* Tweet Itself */}
                 <div className={tweet}>
                     {Quotes[i]}
+                    {/* <Tweets/> */}
                 </div>
-
                 {/* Options */}
                 <div className="flex justify-between w-5/6">
                     <div className={options}>

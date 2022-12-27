@@ -1,7 +1,7 @@
-export default function Head() {
+export default function Head({children}:any) {
     return (
         <>
-            <title> / Twitter</title>
+            <title>Shitter</title>
             <meta property="og:site_name" content="Twitter"/>
             <meta
                 content="width=device-width, initial-scale=1"
